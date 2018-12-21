@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="text" id="txtValue">
+<input type="button" id="btnAdd" value="Add" onclick="newElementForArray();">
+<input type="button" id="btnDisplay" value="Display" onclick="displayElement();">
+<div id="result"></div>
+
+<script>
+    var a = [];
+    var i = 0
+
+    function newElementForArray() {
+
+        a[i] = parseInt(document.getElementById("txtValue").value);
+
+        alert("Element " + a[i] + " added at index " + i);
+        i++;
+        document.getElementById("txtValue").value = "";
+    }
+
+    function displayElement() {
+        var e = "<hr/>";
+        for (var j = 0; j < a.length; j++) {
+            e += "Element " + j +" = " + a[j] + "<br/>";
+        }
+        document.getElementById("result").innerHTML = e;
+    }
+</script>
+
+
+</body>
+</html>
